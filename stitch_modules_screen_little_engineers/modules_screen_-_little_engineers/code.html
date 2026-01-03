@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Little Engineers - Modules</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2b8cee",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "surface-light": "#ffffff",
+              "surface-dark": "#1e293b",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "1rem", 
+              "lg": "1.5rem", 
+              "xl": "2rem", 
+              "2xl": "2.5rem",
+              "full": "9999px"
+            },
+            boxShadow: {
+                'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                'card': '0 2px 12px -2px rgba(43, 140, 238, 0.08)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .icon-filled {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        /* Custom scrollbar hiding for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-slate-100 antialiased overflow-x-hidden transition-colors duration-300">
+<div class="relative flex h-full min-h-screen w-full max-w-md mx-auto flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden shadow-2xl">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-20 flex items-center bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm p-4 pt-6 justify-between transition-colors">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-12 ring-2 ring-primary/20" data-alt="Child profile avatar illustration smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSjUT-FupIruDVfiNkFH8WndTXTqjEym7_gWJ7SrsRwiT2bYzDmO9iutWQMI1vBc_iAC3rvjN9jd1kiU7rJRKEKv_QhEntz9Zd9prU1ajg-bDYoYQRNDZJVyT3A_JFMfTqm7sSEswCimXjvm4dtucBNXpCDihICmWOPv2nq8GFNbMm-LmJNiVevnvGJ2Y-EDk1kHllVOB6RHnFxfJkjX5HgbxugXYzuA3XYaf5WPK5SzznwNjIKZ95XpIh5M138K3vizAN1gHIcuU");'>
+</div>
+<div class="absolute bottom-0 right-0 size-3 bg-green-400 rounded-full border-2 border-white dark:border-background-dark"></div>
+</div>
+</div>
+<div class="flex items-center justify-end">
+<button class="flex items-center justify-center rounded-full size-12 bg-white dark:bg-surface-dark text-slate-400 hover:text-primary transition-colors shadow-soft">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-24 px-4">
+<!-- Hero Header -->
+<div class="pt-2 pb-6">
+<h1 class="text-[#0d141b] dark:text-white text-[32px] font-bold leading-tight tracking-tight">Hello,<br/><span class="text-primary">Little Engineer</span></h1>
+<p class="text-slate-500 dark:text-slate-400 mt-2 text-lg">Ready to build today?</p>
+</div>
+<!-- Active Module Card -->
+<section class="mb-8">
+<div class="flex flex-col items-stretch justify-start rounded-2xl bg-surface-light dark:bg-surface-dark shadow-card overflow-hidden transition-all hover:scale-[1.01] duration-300">
+<div class="relative w-full aspect-[4/3] bg-primary/5">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover" data-alt="Gentle illustration of earth with a warm glowing core" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuD31l-f8dh96WdnE9IksaQh2FRPhvA2i1vjbrSTP3Tn4UMR2NL8P48rwoDw56_bNBLpY2krdDs6-hS9z4VJkU3NHrHeHhopi_B9sYlzjq59XLFqZa1pYIhHHmEN4lw-kShgsUXqCwS6Ap52SbPHO3R3M7KVVwG8WwNvHNEa0Sb-lSv7rpsnlXTN_ZuSlUa-GP2USIDgxop8TWGv6QZExTMPa1NOn4BQfsHVjUo3ot_C5fF4V_QRqws7AqnJoOkfIAwIzV6CNy8a8");'>
+</div>
+<div class="absolute top-4 right-4 bg-white/90 dark:bg-black/50 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide text-primary">
+                            In Progress
+                        </div>
+</div>
+<div class="flex flex-col p-5 gap-3">
+<div>
+<h2 class="text-[#0d141b] dark:text-white text-2xl font-bold leading-tight tracking-tight mb-1">The Earth With a Warm Belly</h2>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-relaxed">How the Earth helps us with warmth.</p>
+</div>
+<!-- Progress Indicator -->
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden mt-1">
+<div class="bg-primary h-full rounded-full w-1/3"></div>
+</div>
+<div class="pt-2">
+<button class="w-full flex items-center justify-center rounded-full h-14 bg-primary text-white text-lg font-bold shadow-lg shadow-primary/30 hover:bg-blue-600 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined mr-2">play_circle</span>
+                                Start Building
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Modules List -->
+<section class="flex flex-col gap-5">
+<h3 class="text-lg font-bold text-slate-800 dark:text-slate-200 px-1">Next Projects</h3>
+<!-- Card: Bridge -->
+<div class="group relative flex items-center justify-between gap-4 p-4 rounded-xl bg-surface-light dark:bg-surface-dark border border-transparent hover:border-primary/20 shadow-soft transition-all">
+<div class="flex flex-col gap-2 flex-1 min-w-0">
+<div>
+<h4 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight truncate">The Bridge That Holds Hands</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal mt-1 line-clamp-2">Why triangles make things strong.</p>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 text-xs font-bold gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                                Coming Soon
+                            </span>
+</div>
+</div>
+<div class="w-24 h-24 shrink-0 bg-slate-100 dark:bg-slate-700 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-80 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0" data-alt="Sketch illustration of a suspension bridge" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmmTH2mEIS3YdkbWpKezQyCf09GXqafeSe39DmuB-Mta8sP8QO5GK_220k3VKyVcg4X_OdvujJL1xXX6OUmVW-mUTYAKHc8YVRrzJy_KX130J4PgkKwm0d9LFia2KStPVbLO4q2H8ZX7evNtqo2VzOT9Lt-Hg_Ng5e4rkrOrCNjkzYLouHk2UodjP858GQN-En_etBlRZHVfdoyejrjwUx7A9gG7IQ2VWNMQo1j_1rLoVl8zSBPzkWbc61k_qxq6NHI8ickgjBDH4");'>
+</div>
+</div>
+</div>
+<!-- Card: Wind -->
+<div class="group relative flex items-center justify-between gap-4 p-4 rounded-xl bg-surface-light dark:bg-surface-dark border border-transparent hover:border-primary/20 shadow-soft transition-all">
+<div class="flex flex-col gap-2 flex-1 min-w-0">
+<div>
+<h4 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight truncate">Wind's Invisible Push</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal mt-1 line-clamp-2">Catching the breeze for energy.</p>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 text-xs font-bold gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                                Coming Soon
+                            </span>
+</div>
+</div>
+<div class="w-24 h-24 shrink-0 bg-slate-100 dark:bg-slate-700 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover opacity-80 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0" data-alt="Illustration of wind turbines on a green hill" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8BalLeGG-kHqrbTPZ1dvXD1d8552Ht3QHLbYyH_8JP4qpZHinOR75GbAwHXdM_U4cDoymSQ33MnHw_ac2-4SoFFGdSSZW_Fk7w_OdpZUaLgHqErOeaUAiY78IGTS8f1mHaCyJBweRamdeOUzXmR3c29vTyzJtNuFl-bobu5jNPcpT4bt6ZYWOjaLwrDv47psVjsoOzMufaoy5aVbAm_I6txsZ5gW-u5VUrtROqX3svFQ77IT08cMI6RQre0r_PID46rpZ_0uYPrA");'>
+</div>
+</div>
+</div>
+<!-- Card: Water (Extra filler to show scroll) -->
+<div class="group relative flex items-center justify-between gap-4 p-4 rounded-xl bg-surface-light dark:bg-surface-dark border border-transparent hover:border-primary/20 shadow-soft transition-all opacity-60">
+<div class="flex flex-col gap-2 flex-1 min-w-0">
+<div>
+<h4 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight truncate">Water's Strong Arms</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal mt-1 line-clamp-2">How water pushes wheels.</p>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-300 text-xs font-bold gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                                Locked
+                            </span>
+</div>
+</div>
+<div class="w-24 h-24 shrink-0 bg-slate-100 dark:bg-slate-700 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-center bg-no-repeat bg-cover grayscale" data-alt="Abstract blue water waves pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDSCG-y3YDlNopvvvU404vJ0g7daelAeZ0FggP0hjNH2tBVvYCMBKm6tc8AQoZszI0ErqrK1ofL5-0CV-6DJTuC42LJ6vEGl8Tpipp_-wiNMII8_Oht6Yz_ZcVlQkvyub0WKwajs821kp_rgdvZRhcsKB-dTaD_Jd-f5Ip7uXwgBQE4U_VfiqgLAtQkLl0atiVamnt9ZC1m6LUIeam-UdJLfrOFBf5p0zdM8rsI_vMEeygLce68dTtfXhV1sdkyM_SH5R-TbUPJQds");'>
+</div>
+</div>
+</div>
+</section>
+<div class="h-8 w-full"></div>
+</main>
+<!-- Bottom Tab Navigation -->
+<nav class="absolute bottom-0 w-full bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 pb-safe pt-2">
+<div class="flex items-center justify-around h-20 px-4 pb-2">
+<button class="flex flex-col items-center justify-center gap-1 w-16 h-full text-primary">
+<span class="material-symbols-outlined icon-filled text-[28px]">home</span>
+<span class="text-xs font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]">architecture</span>
+<span class="text-xs font-medium">My Studio</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-16 h-full text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[28px]">emoji_events</span>
+<span class="text-xs font-medium">Awards</span>
+</button>
+</div>
+</nav>
+</div>
+<script>
+        // Simple dark mode toggle logic for demonstration purposes if needed
+        // Since the prompt asks for clean output without JS logic, we just set the class on HTML tag manually in code.
+    </script>
+</body></html>
